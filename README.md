@@ -5,20 +5,20 @@ This repository contains scripts for estimating ribosomal DNA (rDNA) copy number
 
 The analysis workflow consists of the following three steps:
 
-1. **Reference and background preparation**  
-   Retrieval and construction of reference rDNA and background sequences.
+0. **Reference and background preparation**  
+   Retrieval and construction of reference rDNA and background sequences. This only needs to be run once.
 
-2. **Sequencing depth estimation**  
+1. **Sequencing depth estimation**  
    Calculation of read depth within rDNA regions.
 
-3. **Copy number normalization**  
+2. **Copy number normalization**  
    Derivation of normalized rDNA copy number estimates.
 
 ---
 
 ## Workflow
 
-### Step 1 — Build reference and background sequences *(only run once)*
+### Step 0 — Build reference and background sequences *(only run once)*
 
 This step prepares the rDNA reference sequences (45S and 5S) and a set of
 background regions (exonic + intronic) used for normalization/comparison.
@@ -56,7 +56,7 @@ ref/
 
 ---
 
-### Step 2 — Estimate rDNA coverage and background read depth
+### Step 1 — Estimate rDNA coverage and background read depth
 
 This step extracts reads originating from rDNA regions and computes position-wise coverage for the 5S and 45S arrays, normalized by BRD.
 
@@ -88,7 +88,7 @@ These files contain position-wise rDNA depth estimates normalized by BRD for the
 
 ---
 
-### Step 3 — Collect normalized rDNA copy number estimates
+### Step 2 — Collect normalized rDNA copy number estimates
 
 This step aggregates depth estimates and derives rDNA copy number for
 the 5S and 45S subunits across samples.
@@ -113,5 +113,5 @@ python scripts/collect_rDNA_CN.py --folder project_name --output output.tsv
         └── output.tsv
     └── project_name/
         ├── sample_name.5S.BRD_norm_depth.tsv
-        └──  sample_name.45S.BRD_norm_depth.tsv
+        └── sample_name.45S.BRD_norm_depth.tsv
 ```
