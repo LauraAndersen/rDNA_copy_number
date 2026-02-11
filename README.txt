@@ -1,3 +1,6 @@
+
+# rDNA copy number
+
 This folder contains:
 
 get_reference_seq.sh (Selecting reference rDNA and background sequences):
