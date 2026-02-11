@@ -17,7 +17,7 @@ The analysis workflow consists of the following three steps:
 
 ## Workflow
 
-### Step 1 — Build reference and background sequences
+### Step 1 — Build reference and background sequences *(run once)*
 
 This step prepares the rDNA reference sequences (45S and 5S) and a set of
 background regions (exonic + intronic) used for normalization/comparison.
@@ -30,6 +30,7 @@ background regions (exonic + intronic) used for normalization/comparison.
 **Run (Slurm)**
 ```bash
 sbatch get_reference_seq.sh
+```
 
 
 
