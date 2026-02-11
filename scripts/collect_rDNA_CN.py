@@ -81,10 +81,13 @@ def main():
     parser.add_argument("--output", required=True, help="")
     args = parser.parse_args()
 
-    CN_df = collect_rDNA_CN(args.folder)
+    folder = f"output/{args.folder}/"
+    output_file = f"output/summary_files/{args.output}"
+
+    CN_df = collect_rDNA_CN(folder)
 
     # Save to tsv file
-    CN_df.to_csv(args.output,
+    CN_df.to_csv(output_file,
                  sep="\t",
                  index=False
                  )

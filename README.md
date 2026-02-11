@@ -94,13 +94,24 @@ This step aggregates depth estimates and derives rDNA copy number for
 the 5S and 45S subunits across samples.
 
 **What it does**
-- Computes normalized rDNA copy number estimates
+- Computes normalized rDNA copy number estimates for 5s and 45S rDNA subunits
 - Outputs a summary table for downstream analysis
 
-**Run**
+**Inputs:**
+- `project_name` — Project identifier (e.g. `TCGA_BLCA`).
+- `output.tsv` - filename for output summary tsv file.
+
+**Run:**
 ```bash
-python scripts/collect_rDNA_CN.py --folder <results_folder> --output <output.tsv>
+python scripts/collect_rDNA_CN.py --folder project_name --output output.tsv
 ```
 
-
-(Specify input and output)
+**Outputs:**
+```
+├── output/
+│   └── summary_files
+│       ├── output.tsv
+│   ├── project_name/
+│   │   ├── sample_name.5S.BRD_norm_depth.tsv
+│   │   ├── sample_name.45S.BRD_norm_depth.tsv
+```
