@@ -1,7 +1,23 @@
 
-# rDNA copy number
+# Calculate rDNA copy number
 
-This folder contains:
+This repository contains scripts for estimating ribosomal DNA (rDNA) copy number from whole-genome sequencing data, focusing on the 5S and 45S rDNA.
+
+The workflow includes the following steps:
+
+1. **Reference and background preparation**  
+   Retrieval and construction of reference rDNA and background sequences.
+
+2. **Sequencing depth estimation**  
+   Calculation of read depth within rDNA regions.
+
+3. **Copy number normalization**  
+   Derivation of normalized rDNA copy number estimates.
+
+
+
+
+
 
 get_reference_seq.sh (Selecting reference rDNA and background sequences):
   1. Downloads and modifies the 45S and 5S rDNA sequences.
