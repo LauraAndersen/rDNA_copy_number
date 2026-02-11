@@ -32,32 +32,37 @@ background regions (exonic + intronic) used for normalization/comparison.
 sbatch get_reference_seq.sh
 ```
 
+---
 
+### Step 2 — Estimate rDNA coverage and background read depth
 
+This step extracts reads originating from rDNA regions and computes position-wise coverage for the 5S and 45S arrays, normalized by background read depth (BRD).
 
+**What it does**
+- Slices rDNA regions from the input BAM file
+- Converts sliced reads to FASTQ
+- Maps reads to rDNA reference sequences
+- Estimates background read depth (BRD) from single-copy exons and introns
+- Computes position-wise depth normalized by BRD
 
+**Run**
+```bash
+bash calc_rDNA_depth.sh <bam_file> <project_name>
+```
 
+---
 
-get_reference_seq.sh (Selecting reference rDNA and background sequences):
-  1. Downloads and modifies the 45S and 5S rDNA sequences.
-  2. Downloads reference data.
-  3. Calls the script build_background_ref.py to retreive the exonic and intronic regions to compare to.
+### Step 3 — Collect normalized rDNA copy number estimates
 
-Run as: sbatch get_reference_seq.sh
+This step aggregates depth estimates and derives rDNA copy number for
+the 5S and 45S subunits across samples.
 
-calc_rDNA_depth.sh (Obtaining rDNA array reads, and calculate position wise coverage of 5S and 45S):
-  1. Slice rDNA regions from bam file and output to fastq
-  2. Map rDNA-sliced reads to rDNA reference sequences
-  3. Estimate background read depth (BRD) for single-copy regions
-  4. Get position wise depth for the aligned files normalized by BRD
+**What it does**
+- Computes normalized rDNA copy number estimates
+- Outputs a summary table for downstream analysis
 
-Run as: bash calc_rDNA_depth.sh bam project
-
-collect_rDNA_CN.py (Gets the rDNA copy number for the rDNA subunits for all patients in folder)
-Run as: python scripts/collect_rDNA_CN.py --folder folder/ --output output_file.tsv
-
-To run the whole thing, run:
-1. get_reference_seq.sh (only once)
-2. calc_rDNA_depth.sh
-3. collect_rDNA_CN.py
+**Run**
+```bash
+python scripts/collect_rDNA_CN.py --folder <results_folder> --output <output.tsv>
+```
 
