@@ -27,7 +27,10 @@ background regions (exonic + intronic) used for normalization/comparison.
 - Downloads reference genome data
 - Calls `build_background_ref.py` to extract exonic and intronic background regions
 
-**Run (Slurm)**
+**Outputs**
+
+
+**Run**
 ```bash
 sbatch get_reference_seq.sh
 ```
@@ -66,3 +69,5 @@ the 5S and 45S subunits across samples.
 python scripts/collect_rDNA_CN.py --folder <results_folder> --output <output.tsv>
 ```
 
+
+(Specify input and output)
