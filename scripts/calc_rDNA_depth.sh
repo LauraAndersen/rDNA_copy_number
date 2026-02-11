@@ -1,8 +1,4 @@
 #!/bin/bash
-#SBATCH --account=CancerEvolution
-#SBATCH --time=48:00:00
-#SBATCH --mem=16g
-#SBATCH --cpus-per-task=8
 
 ##############################################################
 # Run as: bash calc_rDNA_depth.sh bam project

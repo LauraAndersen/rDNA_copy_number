@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
-#SBATCH --account=CancerEvolution
-#SBATCH --time=4:00:00
-#SBATCH --mem=32g
-#SBATCH --cpus-per-task=1
 
 set -euo pipefail
 
