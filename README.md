@@ -78,10 +78,10 @@ bash calc_rDNA_depth.sh sample_name.bam project_name
 
 **Outputs:**
 ```
-├── output/
-│   ├── project_name/
-│   │   ├── sample_name.5S.BRD_norm_depth.tsv
-│   │   ├── sample_name.45S.BRD_norm_depth.tsv
+└── output/
+    └── project_name/
+        ├── sample_name.5S.BRD_norm_depth.tsv
+        └── sample_name.45S.BRD_norm_depth.tsv
 ```
 
 These files contain position-wise rDNA depth estimates normalized by BRD for the 5S and 45S arrays.
@@ -99,7 +99,7 @@ the 5S and 45S subunits across samples.
 
 **Inputs:**
 - `project_name` — Project identifier (e.g. `TCGA_BLCA`).
-- `output.tsv` - filename for output summary tsv file.
+- `output.tsv` — filename for output summary tsv file.
 
 **Run:**
 ```bash
@@ -108,10 +108,10 @@ python scripts/collect_rDNA_CN.py --folder project_name --output output.tsv
 
 **Outputs:**
 ```
-├── output/
-│   └── summary_files
-│       ├── output.tsv
-│   ├── project_name/
-│   │   ├── sample_name.5S.BRD_norm_depth.tsv
-│   │   ├── sample_name.45S.BRD_norm_depth.tsv
+└── output/
+    ├── summary_files
+        └── output.tsv
+    └── project_name/
+        ├── sample_name.5S.BRD_norm_depth.tsv
+        └──  sample_name.45S.BRD_norm_depth.tsv
 ```
