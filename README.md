@@ -17,7 +17,7 @@ The analysis workflow consists of the following three steps:
 
 ## Workflow
 
-### Step 1 — Build reference and background sequences *(run once)*
+### Step 1 — Build reference and background sequences *(only run once)*
 
 This step prepares the rDNA reference sequences (45S and 5S) and a set of
 background regions (exonic + intronic) used for normalization/comparison.
@@ -25,27 +25,49 @@ background regions (exonic + intronic) used for normalization/comparison.
 **What it does**
 - Downloads and modifies the 45S and 5S rDNA sequences
 - Downloads reference genome data
-- Calls `build_background_ref.py` to extract exonic and intronic background regions
-
-**Outputs**
-
+- Calls `build_background_ref.py` to extract exonic and intronic background read depth (BRD) regions
 
 **Run**
 ```bash
 sbatch get_reference_seq.sh
 ```
 
+**Outputs**
+```
+ref/
+├── repeatmasker_hg38.bed
+├── rDNA_slice_regions.hg38.bed
+├── rDNA_combined.fasta
+├── rDNA_combined.fasta.amb
+├── rDNA_combined.fasta.ann
+├── rDNA_combined.fasta.bwt
+├── rDNA_combined.fasta.pac
+├── rDNA_combined.fasta.sa
+├── Homo_sapiens.GRCh38.dna.primary_assembly.fa
+├── Homo_sapiens.GRCh38.dna.primary_assembly.fa.fai
+├── hg38_blastdb/
+├── GCF_000001405.40_GRCh38.p14_genomic.gff
+├── bg_chr1_exon.bed
+├── bg_chr1_intron.bed
+├── bg_chr1_exons_introns.bed
+├── bg_acro_exon.bed
+├── bg_acro_intron.bed
+├── bg_acro_exons_introns.bed
+├── 5S_X12811.1.fasta
+└── 45S_U13369.1_modified_16kb.fasta
+```
+
 ---
 
 ### Step 2 — Estimate rDNA coverage and background read depth
 
-This step extracts reads originating from rDNA regions and computes position-wise coverage for the 5S and 45S arrays, normalized by background read depth (BRD).
+This step extracts reads originating from rDNA regions and computes position-wise coverage for the 5S and 45S arrays, normalized by BRD.
 
 **What it does**
 - Slices rDNA regions from the input BAM file
 - Converts sliced reads to FASTQ
 - Maps reads to rDNA reference sequences
-- Estimates background read depth (BRD) from single-copy exons and introns
+- Estimates BRD from single-copy exons and introns
 - Computes position-wise depth normalized by BRD
 
 **Run**

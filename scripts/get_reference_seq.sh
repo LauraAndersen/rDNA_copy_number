@@ -85,7 +85,7 @@ python scripts/build_background_ref.py \
   --genome ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
   --gff ref/GCF_000001405.40_GRCh38.p14_genomic.gff \
   --rmsk ref/repeatmasker_hg38.bed \
-  --outdir /faststorage/project/CancerEvolution_shared/Projects/laura/rDNA/ref
+  --outdir ref
 
 cat ref/bg_chr1_exon.bed ref/bg_chr1_intron.bed > ref/bg_chr1_exons_introns.bed
 cat ref/bg_acro_exon.bed ref/bg_acro_intron.bed > ref/bg_acro_exons_introns.bed
