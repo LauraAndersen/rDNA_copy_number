@@ -69,7 +69,7 @@ This step extracts reads originating from rDNA regions and computes position-wis
 
 **Inputs:**
 - <sample_name.bam>: WGS BAM file
-- <project_name>: name of the project (i.e. "TCGA_BLCA"). Will be the name of the folder used for output.
+- <project_name>: Project identifier (e.g. `TCGA_BLCA`). Used to name the output directory.
 
 **Run:**
 ```bash
@@ -83,6 +83,8 @@ bash calc_rDNA_depth.sh <sample_name.bam> <project_name>
 │   │   ├── <sample_name>.5S.BRD_norm_depth.tsv
 │   │   ├── <sample_name>.45S.BRD_norm_depth.tsv
 ```
+
+These files contain position-wise rDNA depth estimates normalized by BRD for the 5S and 45S arrays.
 
 ---
 
