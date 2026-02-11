@@ -3,7 +3,7 @@
 
 This repository contains scripts for estimating ribosomal DNA (rDNA) copy number from whole-genome sequencing data, focusing on the 5S and 45S rDNA.
 
-The workflow includes the following steps:
+The analysis workflow consists of the following three steps:
 
 1. **Reference and background preparation**  
    Retrieval and construction of reference rDNA and background sequences.
@@ -13,6 +13,24 @@ The workflow includes the following steps:
 
 3. **Copy number normalization**  
    Derivation of normalized rDNA copy number estimates.
+
+
+## Workflow
+
+### Step 1 — Build reference and background sequences
+
+This step prepares the rDNA reference sequences (45S and 5S) and a set of
+background regions (exonic + intronic) used for normalization/comparison.
+
+**What it does**
+- Downloads and modifies the 45S and 5S rDNA sequences
+- Downloads reference genome data
+- Calls `build_background_ref.py` to extract exonic and intronic background regions
+
+**Run (Slurm)**
+```bash
+sbatch get_reference_seq.sh
+
 
 
 
