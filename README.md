@@ -65,9 +65,9 @@ This step extracts reads originating from rDNA regions and computes position-wis
 - Converts sliced reads to FASTQ
 - Maps reads to rDNA reference sequences
 - Estimates BRD from single-copy exons and introns
-- Computes position-wise depth normalized by BRD
+- Computes position-wise BRD normalized depth for 5S and 45S rDNA
 
-**Input:**
+**Inputs:**
 - sample_name.bam: WGS BAM file
 - project_name: name of the project. Will be the name of the folder used for output.
 
@@ -77,12 +77,12 @@ bash calc_rDNA_depth.sh <sample_name.bam> <project_name>
 ```
 
 **Outputs:**
-"""
+```
 ├── output
 │   ├── <project_name>
 │   │   ├── <sample_name>.5S.BRD_norm_depth.tsv
 │   │   ├── <sample_name>.45S.BRD_norm_depth.tsv
-"""
+```
 
 ---
 
