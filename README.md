@@ -28,7 +28,7 @@ background regions (exonic + intronic) used for normalization/comparison.
 - Downloads reference genome data
 - Calls `build_background_ref.py` to extract exonic and intronic background read depth (BRD) regions
 
-**Run**
+**Run:**
 ```bash
 sbatch get_reference_seq.sh
 ```
@@ -67,10 +67,22 @@ This step extracts reads originating from rDNA regions and computes position-wis
 - Estimates BRD from single-copy exons and introns
 - Computes position-wise depth normalized by BRD
 
-**Run**
+**Input:**
+- sample_name.bam: WGS BAM file
+- project_name: name of the project. Will be the name of the folder used for output.
+
+**Run:**
 ```bash
-bash calc_rDNA_depth.sh <bam_file> <project_name>
+bash calc_rDNA_depth.sh <sample_name.bam> <project_name>
 ```
+
+**Outputs:**
+"""
+├── output
+│   ├── <project_name>
+│   │   ├── <sample_name>.5S.BRD_norm_depth.tsv
+│   │   ├── <sample_name>.45S.BRD_norm_depth.tsv
+"""
 
 ---
 
