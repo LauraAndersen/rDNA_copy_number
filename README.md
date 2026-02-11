@@ -14,6 +14,7 @@ The analysis workflow consists of the following three steps:
 3. **Copy number normalization**  
    Derivation of normalized rDNA copy number estimates.
 
+---
 
 ## Workflow
 
@@ -32,7 +33,7 @@ background regions (exonic + intronic) used for normalization/comparison.
 sbatch get_reference_seq.sh
 ```
 
-**Outputs**
+**Outputs:**
 ```
 ref/
 ├── repeatmasker_hg38.bed
@@ -47,11 +48,7 @@ ref/
 ├── Homo_sapiens.GRCh38.dna.primary_assembly.fa.fai
 ├── hg38_blastdb/
 ├── GCF_000001405.40_GRCh38.p14_genomic.gff
-├── bg_chr1_exon.bed
-├── bg_chr1_intron.bed
 ├── bg_chr1_exons_introns.bed
-├── bg_acro_exon.bed
-├── bg_acro_intron.bed
 ├── bg_acro_exons_introns.bed
 ├── 5S_X12811.1.fasta
 └── 45S_U13369.1_modified_16kb.fasta

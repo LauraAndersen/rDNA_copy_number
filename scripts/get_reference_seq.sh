@@ -89,3 +89,5 @@ python scripts/build_background_ref.py \
 
 cat ref/bg_chr1_exon.bed ref/bg_chr1_intron.bed > ref/bg_chr1_exons_introns.bed
 cat ref/bg_acro_exon.bed ref/bg_acro_intron.bed > ref/bg_acro_exons_introns.bed
+
+rm ref/bg_chr1_exon.bed ref/bg_chr1_intron.bed ref/bg_acro_exon.bed ref/bg_acro_intron.bed
