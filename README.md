@@ -16,6 +16,15 @@ The analysis workflow consists of the following three steps:
 
 ---
 
+## Install
+
+```bash
+conda env create -f environment.yml
+conda activate rdna_env
+```
+
+---
+
 ## Workflow
 
 ### Step 0 — Build reference and background sequences *(only run once)*
@@ -30,7 +39,7 @@ background regions (exonic + intronic) used for normalization/comparison.
 
 **Run:**
 ```bash
-sbatch get_reference_seq.sh
+bash scripts/get_reference_seq.sh
 ```
 
 **Outputs:**
@@ -73,7 +82,7 @@ This step extracts reads originating from rDNA regions and computes position-wis
 
 **Run:**
 ```bash
-bash calc_rDNA_depth.sh sample_name.bam project_name
+bash scripts/calc_rDNA_depth.sh sample_name.bam project_name
 ```
 
 **Outputs:**

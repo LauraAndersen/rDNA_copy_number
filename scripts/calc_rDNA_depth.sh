@@ -15,8 +15,6 @@
 
 # Load conda environment
 set -euo pipefail
-source ~/mambaforge/etc/profile.d/conda.sh
-conda activate rdna_env
 
 THREADS=8 # $SLURM_CPUS_PER_TASK
 
@@ -36,12 +34,6 @@ mkdir -p "${OUT_DIR}"
 # Sample name from BAM filename
 BAM_BASENAME="$(basename "${BAM}")"
 SAMPLE="${BAM_BASENAME%%.*}"
-# OUT_DIR="${OUT_DIR}/${SAMPLE}"
-# mkdir -p "${OUT_DIR}"
-
-# # Redirect stdout and stderr to log
-# LOG="${LOGS}/${SAMPLE}.log"
-# exec > >(tee -a "$LOG") 2>&1
 
 # Reference files
 RDNA_REF="${REF_DIR}/rDNA_combined.fasta"
