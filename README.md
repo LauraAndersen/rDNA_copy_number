@@ -65,7 +65,7 @@ ref/
 
 ---
 
-### Step 1 — Estimate rDNA coverage and background read depth
+### Step 1 — Estimate rDNA coverage and background read depth (BRD)
 
 This step extracts reads originating from rDNA regions and computes position-wise coverage for the 5S and 45S arrays, normalized by BRD.
 

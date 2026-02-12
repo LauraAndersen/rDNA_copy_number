@@ -1,18 +1,5 @@
 #!/bin/bash
 
-##############################################################
-# Run as: bash calc_rDNA_depth.sh bam project
-# test bam: /faststorage/project/CancerEvolution_shared/Projects/chongming/test_10_BLCA/TCGA-4Z-AA7S-10A.bam
-
-# For multiple runs run as:
-# for bam in /project/CancerEvolution/Datasets/TCGA_WGS/randiip/data/TCGA-OV/*.bam; do
-#     sample=$(basename "$bam" .bam)
-
-#     sbatch -o logs/${sample}.log -e logs/${sample}.log \
-#            scripts/calc_rDNA_depth.sh "$bam" TCGA_OV
-# done
-##############################################################
-
 # Load conda environment
 set -euo pipefail
 

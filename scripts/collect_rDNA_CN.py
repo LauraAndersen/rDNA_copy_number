@@ -3,10 +3,6 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 
-"""
-Run as:
-python scripts/collect_rDNA_CN.py --folder output/TCGA_PRAD/ --output output/summary_files/TCGA_PRAD_rDNA_copy_number.tsv
-"""
 
 def annotate_45s_unit(pos: pd.Series) -> pd.Series:
     """
