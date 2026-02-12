@@ -73,11 +73,13 @@ def collect_rDNA_CN(project_folder):
 def main():
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--folder", required=True, help="")
+    parser.add_argument("--project_name", required=True, help="")
     parser.add_argument("--output", required=True, help="")
     args = parser.parse_args()
 
-    folder = f"output/{args.folder}/"
+    os.makedirs('output/summary_files/', exist_ok=True)
+
+    folder = f"output/{args.project_name}/"
     output_file = f"output/summary_files/{args.output}"
 
     CN_df = collect_rDNA_CN(folder)
