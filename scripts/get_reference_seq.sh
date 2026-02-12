@@ -81,6 +81,8 @@ rm ref/rmsk_hg38.txt.gz
 # Get exonic and intronic regions
 #########################################################################
 
+echo "Running build_background_ref.py..."
+
 python scripts/build_background_ref.py \
   --genome ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa \
   --gff ref/GCF_000001405.40_GRCh38.p14_genomic.gff \

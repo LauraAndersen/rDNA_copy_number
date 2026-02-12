@@ -5,12 +5,6 @@ import pandas as pd
 import pysam
 import numpy as np
 
-"""
-Run for hg38 as:
-scripts/build_background_ref.py --genome ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa --gff ref/GCF_000001405.40_GRCh38.p14_genomic.gff --rmsk ref/repeatmasker_hg38.bed --outdir /faststorage/project/CancerEvolution_shared/Projects/laura/rDNA/ref
-
-"""
-
 ##############################################################
 # Functions
 ##############################################################
@@ -225,9 +219,11 @@ def main():
     os.makedirs(args.outdir, exist_ok=True)
 
     # 1) Build exon/intron candidates and subtract repeats
+    print("Building exon/intron candidates...", flush=True)
     cands_chr1_exon, cands_chr1_intron, cands_acro_exon, cands_acro_intron = build_candidates(args.gff, args.rmsk)
 
     # 2) Run makeblastdb (once per genome path)
+    print("Running blast...", flush=True)
     db_prefix = os.path.join(args.outdir, "hg38_blastdb", "hg38")
     if not (os.path.exists(db_prefix + ".nhr") or os.path.exists(db_prefix + ".nin") or os.path.exists(db_prefix + ".nsq")):
         run_makeblastdb(args.genome, db_prefix)

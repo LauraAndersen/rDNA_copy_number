@@ -1,6 +1,7 @@
 analysis/
 logs/
 output/
-ref/
+ref/*
+!ref/rDNA_slice_regions.hg38.bed
 project_files.txt
 

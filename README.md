@@ -16,7 +16,7 @@ The analysis workflow consists of the following three steps:
 
 ---
 
-## Install
+## Installation
 
 ```bash
 conda env create -f environment.yml
